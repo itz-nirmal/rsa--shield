@@ -81,7 +81,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://github.com"
+                    href="https://github.com/itz-nirmal/rsa--shield"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white/70 hover:text-white transition-colors duration-200 flex items-center"
