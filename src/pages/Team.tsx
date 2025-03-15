@@ -7,11 +7,13 @@ import { TeamMember } from "@/types";
 import { Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const BASE_PATH = "/rsa--shield/";
+
 const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "mentor1",
     name: "Dr. Ishu Sharma",
-    image: "/src/assets/Mentor.jpg",
+    image: `${BASE_PATH}Mentor.jpg`,
     bio: "Dr. Ishu Sharma is an experienced Associate Professor specializing in Computer Science, with a strong background in research, blockchain, and cybersecurity. She has extensive experience in the education management industry, mentoring students and professionals in cutting-edge technologies. As the project mentor for RSA Shield, Dr. Sharma provides expert guidance in cybersecurity and fraud detection, helping shape the project's development and implementation strategies. Her research expertise enhances the project's ability to tackle online scams and fraud prevention effectively. Her leadership and deep technical knowledge make her a valuable asset to the RSA Shield initiative, ensuring it aligns with industry standards and emerging security trends.",
     isMentor: true,
     socialLinks: {
@@ -24,7 +26,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "student1",
     name: "Nirmal Haldar",
-    image: "/src/assets/student4.jpg",
+    image: `${BASE_PATH}student1.jpg`,
     bio: "Web 3 enthusiast and full-stack developer with a strong focus on secure application development.",
     isMentor: false,
     socialLinks: {
@@ -40,7 +42,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "student2",
     name: "Vibhor Singh",
-    image: "/src/assets/student2.jpg",
+    image: `${BASE_PATH}student2.jpg`,
     bio: "Software Engineering student with interests in cybersecurity and secure system design.",
     isMentor: false,
     socialLinks: {
@@ -56,7 +58,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "student3",
     name: "Sambit Sinha",
-    image: "/src/assets/student3.jpg",
+    image: `${BASE_PATH}student3.jpg`,
     bio: "Computer Science Student passionate about cryptography and blockchain technology.",
     isMentor: false,
     socialLinks: {
