@@ -29,7 +29,7 @@ const Account = () => {
             <h2 className="text-2xl font-bold mb-4">Not Logged In</h2>
             <p className="mb-4">Please sign in to view your account details.</p>
             <Button asChild>
-              <a href="/auth">Sign In</a>
+              <a href={`${BASE_PATH}auth`}>Sign In</a>
             </Button>
           </GlassCard>
         </div>
