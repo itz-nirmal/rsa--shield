@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom"; // Changed to HashRouter
 import { AuthProvider } from "./contexts/AuthContext";
 import { DataProvider } from "./contexts/DataContext";
 
@@ -25,7 +25,9 @@ const App = () => (
         <DataProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter>
+          <HashRouter>
+            {" "}
+            {/* Changed to HashRouter */}
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/key-generation" element={<KeyGeneration />} />
@@ -36,7 +38,8 @@ const App = () => (
               <Route path="/team" element={<Team />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </BrowserRouter>
+          </HashRouter>{" "}
+          {/* Changed to HashRouter */}
         </DataProvider>
       </AuthProvider>
     </TooltipProvider>
