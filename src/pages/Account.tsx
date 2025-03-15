@@ -1,23 +1,25 @@
-import React, { useState } from 'react';
-import Layout from '@/components/Layout';
-import GlassCard from '@/components/GlassCard';
-import AnimatedTitle from '@/components/AnimatedTitle';
-import { useAuth } from '@/contexts/AuthContext';
-import { useData } from '@/contexts/DataContext';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Card } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
-import { LogOut, User, Key, Lock, MessageSquare, Trash2 } from 'lucide-react';
+import React, { useState } from "react";
+import Layout from "@/components/Layout";
+import GlassCard from "@/components/GlassCard";
+import AnimatedTitle from "@/components/AnimatedTitle";
+import { useAuth } from "@/contexts/AuthContext";
+import { useData } from "@/contexts/DataContext";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { LogOut, User, Key, Lock, MessageSquare, Trash2 } from "lucide-react";
+
+const BASE_PATH = "/rsa--shield/#/";
 
 const Account = () => {
   const { user, logout, updateUser } = useAuth();
   const { keys, messages, deleteKey, deleteMessage } = useData();
-  const [name, setName] = useState(user?.name || '');
-  const [profileImage, setProfileImage] = useState(user?.profileImage || '');
+  const [name, setName] = useState(user?.name || "");
+  const [profileImage, setProfileImage] = useState(user?.profileImage || "");
 
   if (!user) {
     return (
@@ -35,21 +37,21 @@ const Account = () => {
     );
   }
 
-  const encryptedMessages = messages.filter(msg => msg.type === 'encrypted');
-  const decryptedMessages = messages.filter(msg => msg.type === 'decrypted');
+  const encryptedMessages = messages.filter((msg) => msg.type === "encrypted");
+  const decryptedMessages = messages.filter((msg) => msg.type === "decrypted");
 
   const handleUpdateProfile = () => {
     updateUser({
       name,
-      profileImage
+      profileImage,
     });
   };
 
   const getInitials = (name: string) => {
     return name
-      .split(' ')
-      .map(n => n[0])
-      .join('')
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
       .toUpperCase();
   };
 
@@ -140,12 +142,14 @@ const Account = () => {
             <TabsContent value="keys">
               <GlassCard className="mb-8">
                 <h3 className="text-xl font-semibold mb-6">Your Saved Keys</h3>
-                
+
                 {keys.length === 0 ? (
                   <div className="text-center py-8">
-                    <p className="text-muted-foreground mb-4">You haven't generated any keys yet.</p>
+                    <p className="text-muted-foreground mb-4">
+                      You haven't generated any keys yet.
+                    </p>
                     <Button asChild>
-                      <a href="/key-generation">Generate Keys</a>
+                      <a href={`${BASE_PATH}key-generation`}>Generate Keys</a>
                     </Button>
                   </div>
                 ) : (
@@ -156,11 +160,12 @@ const Account = () => {
                           <div>
                             <h4 className="font-medium">{key.name}</h4>
                             <p className="text-sm text-muted-foreground">
-                              Created: {new Date(key.createdAt).toLocaleDateString()}
+                              Created:{" "}
+                              {new Date(key.createdAt).toLocaleDateString()}
                             </p>
                           </div>
-                          <Button 
-                            variant="ghost" 
+                          <Button
+                            variant="ghost"
                             size="icon"
                             onClick={() => deleteKey(key.id)}
                           >
@@ -170,17 +175,21 @@ const Account = () => {
                         <Separator className="my-4" />
                         <div className="grid gap-4">
                           <div>
-                            <h5 className="text-sm font-medium mb-2">Public Key</h5>
+                            <h5 className="text-sm font-medium mb-2">
+                              Public Key
+                            </h5>
                             <div className="bg-black/30 p-3 rounded-md font-mono text-xs text-white/80 overflow-x-auto max-h-32 overflow-y-auto break-all">
-                              {key.publicKey.split('\n').map((line, i) => (
+                              {key.publicKey.split("\n").map((line, i) => (
                                 <div key={i}>{line}</div>
                               ))}
                             </div>
                           </div>
                           <div>
-                            <h5 className="text-sm font-medium mb-2">Private Key</h5>
+                            <h5 className="text-sm font-medium mb-2">
+                              Private Key
+                            </h5>
                             <div className="bg-black/30 p-3 rounded-md font-mono text-xs text-white/80 overflow-x-auto max-h-32 overflow-y-auto break-all">
-                              {key.privateKey.split('\n').map((line, i) => (
+                              {key.privateKey.split("\n").map((line, i) => (
                                 <div key={i}>{line}</div>
                               ))}
                             </div>
@@ -195,13 +204,17 @@ const Account = () => {
 
             <TabsContent value="encrypted">
               <GlassCard className="mb-8">
-                <h3 className="text-xl font-semibold mb-6">Encrypted Messages</h3>
-                
+                <h3 className="text-xl font-semibold mb-6">
+                  Encrypted Messages
+                </h3>
+
                 {encryptedMessages.length === 0 ? (
                   <div className="text-center py-8">
-                    <p className="text-muted-foreground mb-4">You haven't encrypted any messages yet.</p>
+                    <p className="text-muted-foreground mb-4">
+                      You haven't encrypted any messages yet.
+                    </p>
                     <Button asChild>
-                      <a href="/encryption">Encrypt Message</a>
+                      <a href={`${BASE_PATH}encryption`}>Encrypt Message</a>
                     </Button>
                   </div>
                 ) : (
@@ -211,11 +224,12 @@ const Account = () => {
                         <div className="flex justify-between items-start">
                           <div>
                             <p className="text-sm text-muted-foreground">
-                              Encrypted on: {new Date(message.createdAt).toLocaleDateString()}
+                              Encrypted on:{" "}
+                              {new Date(message.createdAt).toLocaleDateString()}
                             </p>
                           </div>
-                          <Button 
-                            variant="ghost" 
+                          <Button
+                            variant="ghost"
                             size="icon"
                             onClick={() => deleteMessage(message.id)}
                           >
@@ -235,13 +249,17 @@ const Account = () => {
 
             <TabsContent value="decrypted">
               <GlassCard className="mb-8">
-                <h3 className="text-xl font-semibold mb-6">Decrypted Messages</h3>
-                
+                <h3 className="text-xl font-semibold mb-6">
+                  Decrypted Messages
+                </h3>
+
                 {decryptedMessages.length === 0 ? (
                   <div className="text-center py-8">
-                    <p className="text-muted-foreground mb-4">You haven't decrypted any messages yet.</p>
+                    <p className="text-muted-foreground mb-4">
+                      You haven't decrypted any messages yet.
+                    </p>
                     <Button asChild>
-                      <a href="/decryption">Decrypt Message</a>
+                      <a href={`${BASE_PATH}decryption`}>Decrypt Message</a>
                     </Button>
                   </div>
                 ) : (
@@ -251,11 +269,12 @@ const Account = () => {
                         <div className="flex justify-between items-start">
                           <div>
                             <p className="text-sm text-muted-foreground">
-                              Decrypted on: {new Date(message.createdAt).toLocaleDateString()}
+                              Decrypted on:{" "}
+                              {new Date(message.createdAt).toLocaleDateString()}
                             </p>
                           </div>
-                          <Button 
-                            variant="ghost" 
+                          <Button
+                            variant="ghost"
                             size="icon"
                             onClick={() => deleteMessage(message.id)}
                           >
