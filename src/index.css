@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(to bottom, #010a14, #051e34);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg shadow-lg;
+  }
+
+  .neo-panel {
+    @apply bg-slate-800/80 border border-slate-700 rounded-lg shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] backdrop-blur-sm;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:bg-white/10 hover:scale-[1.02] hover:shadow-xl;
+  }
+
+  .animate-fade-in {
+    @apply opacity-0 animate-[fadeIn_0.5s_ease-in-out_forwards];
+  }
+
+  /* Flip Card Animation */
+  .flip-card {
+    @apply perspective-1000 h-96 w-full;
+  }
+
+  .flip-card-inner {
+    @apply relative w-full h-full transition-transform duration-700 transform-style-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    @apply rotate-y-180;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    @apply absolute w-full h-full backface-hidden;
+  }
+
+  .flip-card-back {
+    @apply rotate-y-180;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
