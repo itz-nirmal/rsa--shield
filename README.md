@@ -1,54 +1,50 @@
-# React + TypeScript + Vite
+# RSA Shield
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🔒 Overview
+**RSA Shield** is a web-based cryptographic tool that implements RSA encryption and decryption. It allows users to securely encrypt and decrypt messages using the RSA algorithm, a widely used asymmetric cryptographic method.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
+[Visit RSA Shield](https://itz-nirmal.github.io/rsa--shield/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- **RSA Key Generation**: Generate public and private keys for encryption and decryption.
+- **Encryption**: Encrypt messages using the public key.
+- **Decryption**: Decrypt messages using the private key.
+- **Generate Key, Encrypted Message Save Option**: Save encrypted messages in your account.
+- **Custom Decryption Available**: Use a custom decryption option for added flexibility.
+- **User-Friendly Interface**: Simple UI for easy interaction.
+- **Security**: Uses standard RSA cryptographic principles.
 
-## Expanding the ESLint configuration
+## 📜 How It Works
+1. **Generate Keys**: The system generates a public and private key pair.
+2. **Encrypt Message**: Enter a message and encrypt it using the public key.
+3. **Decrypt Message**: Use the private key to decrypt and retrieve the original message.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Technologies Used
+- HTML, CSS, React, TypeScript, Vite, Shadcn UI, Node.js, Bootstrap
+- RSA Cryptographic Algorithm
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 📷 Screenshots
+(Insert screenshots of the web application here)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📌 Usage Instructions
+1. Open the website: [RSA Shield](https://itz-nirmal.github.io/rsa--shield/)
+2. Create an account.
+3. Generate a new key pair.
+4. Enter a message and encrypt it.
+5. Copy the encrypted message and decrypt it using the private key.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📄 License
+All copyright rights reserved to the Team Members.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 👨‍💻 Developers
+This project is developed by:
+- [itz-nirmal](#) 
+- [vibhor](#) 
+- [sambit](#) 
+
+## 🤝 Contributing
+Contributions are welcome! Feel free to fork the repository and submit pull requests.
+
+## 📧 Contact
+For any queries or support, contact the developer at [itz.nirmal.haldar@gmail.com] or open an issue in the repository.
