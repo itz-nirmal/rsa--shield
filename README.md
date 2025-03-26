@@ -24,9 +24,6 @@
 - HTML, CSS, React, TypeScript, Vite, Shadcn UI, Node.js, Bootstrap
 - RSA Cryptographic Algorithm
 
-## 📷 Screenshots
-(Insert screenshots of the web application here)
-
 ## 📌 Usage Instructions
 1. Open the website: [RSA Shield](https://itz-nirmal.github.io/rsa--shield/)
 2. Create an account.
@@ -39,7 +36,7 @@ All copyright rights reserved to the Team Members.
 
 ## 👨‍💻 Developers
 This project is developed by:
-- [itz-nirmal](#) 
+- [itz-nirmal](https://github.com/itz-nirmal/) 
 - [vibhor](#) 
 - [sambit](#) 
 
