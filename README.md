@@ -37,7 +37,7 @@ All copyright rights reserved to the Team Members.
 ## 👨‍💻 Developers
 This project is developed by:
 - [itz-nirmal](https://github.com/itz-nirmal/) 
-- [vibhor](#) 
+- [vibhor](https://github.com/Vibhor-s24) 
 - [sambit](https://github.com/Sambitsinha05) 
 
 ## 🤝 Contributing
