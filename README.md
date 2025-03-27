@@ -38,7 +38,7 @@ All copyright rights reserved to the Team Members.
 This project is developed by:
 - [itz-nirmal](https://github.com/itz-nirmal/) 
 - [vibhor](#) 
-- [sambit](#) 
+- [sambit](https://github.com/Sambitsinha05) 
 
 ## 🤝 Contributing
 Contributions are welcome! Feel free to fork the repository and submit pull requests.
