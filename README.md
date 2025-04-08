@@ -21,7 +21,7 @@
 3. **Decrypt Message**: Use the private key to decrypt and retrieve the original message.
 
 ## 🛠️ Technologies Used
-- HTML, CSS, React, TypeScript, Vite, Shadcn UI, Node.js, Bootstrap
+- HTML, CSS, React, Tailwind CSS, TypeScript, Vite, Shadcn UI, Node.js, Bootstrap
 - RSA Cryptographic Algorithm
 
 ## 📌 Usage Instructions
